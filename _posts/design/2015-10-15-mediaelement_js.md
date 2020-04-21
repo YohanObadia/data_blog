@@ -17,9 +17,9 @@ tags:
 #
 header: no
 image:
-    title: mediaplayer_js-title.jpg
-    thumb: mediaplayer_js-thumb.jpg
-    homepage: mediaplayer_js-home.jpg
+    title: ../../images/mediaplayer_js-title.jpg
+    thumb: ../images/mediaplayer_js-thumb.jpg
+    homepage: ../images/mediaplayer_js-home.jpg
     caption: Photo by Corey Blaz
     caption_url: https://blaz.photography/
 mediaplayer: true
