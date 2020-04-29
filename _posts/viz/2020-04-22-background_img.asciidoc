@@ -25,9 +25,15 @@ author: yo
 
 = How to create that blog background image ASCIIDOC
 
-This blog post is meant for me to experiment with the Asciidoc syntax to
+This blog post is meant for me to experiment with the Asciidoccc syntax to
 move away from Markdown and integrate it to this jekyll template, as
 well as to document how I produced my background image.
+
+ The Diophantine equation
+ \[
+    x^n + y^n = z^n
+ \]
+ for $n > 2$ has only trivial solutions
 
 == Preparing the environment
 
