@@ -7,6 +7,12 @@
 #   /____/_/\__/\___/   /____/\___/\__/\__/_/_/ /_/\__, /____/
 #                                                 /____/
 #
+
+### NEW  PARAMETERS
+#safe: false
+#lsi: false
+
+
 # Title of your website
 title: 'Data thoughts'
 
@@ -116,7 +122,7 @@ defaults:
       show_meta: false 	# Hide metadata for all pages
       # sidebar:    		# Possible values › left, right › by default there will be no sidebar
       comments: false
-      author: phlow     # Default author for pages
+      author: yobadia     # Default author for pages
   -
     scope:
       path: ''
@@ -125,7 +131,7 @@ defaults:
       show_meta: true   # Show metadata for all posts
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
       comments: false
-      author: phlow     # Default author for posts
+      author: yobadia     # Default author for posts
 
 
 

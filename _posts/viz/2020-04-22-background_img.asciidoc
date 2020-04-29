@@ -2,7 +2,7 @@
 layout: page
 
 subheadline: "Background image"
-title: "How to create that blog background image"
+title: "How to create that blog background image ASCIIDOC"
 teaser: "Use matplotlib for creativity !"
 categories:
   - viz
@@ -23,7 +23,7 @@ image:
 author: yo
 ---
 
-= How to create that blog background image
+= How to create that blog background image ASCIIDOC
 
 This blog post is meant for me to experiment with the Asciidoc syntax to
 move away from Markdown and integrate it to this jekyll template, as
