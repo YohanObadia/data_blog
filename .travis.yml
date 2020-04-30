@@ -2,9 +2,13 @@ language: ruby
 cache: bundler
 rvm:
   - 2.5.7
-script:
+before_install:
+  - gem update --system
+  - gem --version
   - gem install bundler
-  - bundle install
+  - bundle install #
+
+script:
   - bundle exec jekyll build
 
 deploy:
