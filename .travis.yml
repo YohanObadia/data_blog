@@ -8,16 +8,13 @@ before_install:
   - gem install bundler
   - bundle install #
 
-before_script:
-  - chmod +x ./deploy.sh
-
 script:
-  - bash ./deploy.sh
-  #- JEKYLL_ENV=production bundle exec jekyll build --destination site
+  - JEKYLL_ENV=production bundle exec jekyll build --destination site
 
 deploy:
   provider: pages
-  skip-cleanup: true
+  local_dir: ./site
+  skip_cleanup: true
   github_token: $GITHUB_TOKEN
   on:
     branch: master
