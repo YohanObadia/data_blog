@@ -1,0 +1,38 @@
+---
+layout: page
+
+subheadline: "Mathematics"
+title: "How to use latex forumlas"
+teaser: ""
+categories:
+  - Write
+tags:
+  - Math
+  - Asciidoctor
+
+header: no
+
+comments: true
+show_meta: false
+
+author: yo
+
+---
+
+= Activate math support
+
+The next line activates stem and needs to be added to all asciidoc files using math equations
+
+:stem: latexmath
+
+The following presents inline math formula stem:[sqrt(4) = 2]
+
+The we demonstrate how to create multiline math block equation. Note the `\\` to apply a linebreak
+
+
+[stem] 
+++++
+sqrt(4) = 2\\
+sqrt(4) = 2\\
+sqrt(4) = 2
+++++
