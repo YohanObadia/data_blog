@@ -1,8 +1,8 @@
 ---
 layout: page
 
-subheadline: "Class notes"
-title: "RL: Multi-armed bandits"
+subheadline: "Book notes"
+title: "RL: Markov Finite Decision Process"
 teaser: "Learn RL from the ground up"
 categories:
   - reinforcement learning
@@ -26,7 +26,7 @@ include::_posts/math.adoc[leveloffset=+1]
 Those notes are based on the Coursera Reinforcement Learning course and the book 
 "Reinforcement Learning An Introduction Second Edition" from Richard S. Sutton and Andrew G. Barto.
 
-Based on the chapter 2 of the book.
+Based on the chapter 3 of the book.
 
 == k-armed Bandit Problem
 

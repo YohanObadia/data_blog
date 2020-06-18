@@ -1,8 +1,8 @@
 ---
 layout: page
 
-subheadline: "Class notes"
-title: "RL: Multi-armed bandits"
+subheadline: "Book notes"
+title: "RL: Multi-Armed Bandits"
 teaser: "Learn RL from the ground up"
 categories:
   - reinforcement learning
