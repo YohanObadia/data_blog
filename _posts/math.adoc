@@ -1,0 +1,6 @@
+:stem: latexmath
+[stem] 
+++++
+\DeclareMathOperator{\EX}{\mathbb{E}}% expected value
+
+++++
