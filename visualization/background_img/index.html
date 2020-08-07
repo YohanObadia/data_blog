@@ -1,0 +1,67 @@
+<!doctype html><html class="no-js" lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How to create that blog background image</title><link rel="stylesheet" type="text/css" href="https://yobadia.com/assets/css/styles_feeling_responsive.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css"> <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"> </script> <script src="https://yobadia.com/assets/js/modernizr.min.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script> <script> WebFont.load({ google: { families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ] } }); </script> <noscript><link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'> </noscript> <script> MathJax.Hub.Config({ jax: ["input/TeX","output/HTML-CSS"], displayAlign: "left" }); </script><meta name="description" content="Use matplotlib for creativity !"><meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ"><meta name="msvalidate.01" content="0FB4C028ABCF07C908C54386ABD2D97F" ><link rel="author" href="https://plus.google.com/u/0/118311555303973066167"><link rel="canonical" href="https://yobadia.com/visualization/background_img/"><meta property="og:title" content="How to create that blog background image"><meta property="og:description" content="Use matplotlib for creativity !"><meta property="og:url" content="https://yobadia.com/visualization/background_img/"><meta property="og:locale" content="en_EN"><meta property="og:type" content="website"><meta property="og:site_name" content="Data thoughts"><meta property="og:image" content="../../images/background_blue.png"><link type="text/plain" rel="author" href="https://yobadia.com/humans.txt"><link rel="icon" sizes="32x32" href="https://yobadia.com/assets/img/favicon-32x32.png"><link rel="icon" sizes="192x192" href="https://yobadia.com/assets/img/touch-icon-192x192.png"><link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://yobadia.com/assets/img/apple-touch-icon-180x180-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://yobadia.com/assets/img/apple-touch-icon-152x152-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://yobadia.com/assets/img/apple-touch-icon-144x144-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://yobadia.com/assets/img/apple-touch-icon-120x120-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://yobadia.com/assets/img/apple-touch-icon-114x114-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://yobadia.com/assets/img/apple-touch-icon-76x76-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://yobadia.com/assets/img/apple-touch-icon-72x72-precomposed.png"><link rel="apple-touch-icon-precomposed" href="https://yobadia.com/assets/img/apple-touch-icon-precomposed.png"><meta name="msapplication-TileImage" content="https://yobadia.com/assets/img/msapplication_tileimage.png"><meta name="msapplication-TileColor" content="#fabb00"><body id="top-of-page" class="post"><div id="navigation" class="sticky"><nav class="top-bar" role="navigation" data-topbar><ul class="title-area">
+<li class="name"><h1 class="show-for-small-only"><a href="https://yobadia.com" class="icon-tree"> Data thoughts</a></h1></li>
+<li class="toggle-topbar menu-icon"><a href="#"><span>Nav</span></a></li>
+</ul>
+<section class="top-bar-section"><ul class="right">
+<li class="divider">
+<li><a href="https://yobadia.com/info/">About</a></li>
+</ul>
+<ul class="left">
+<li><a href="https://yobadia.com/">Home</a></li>
+<li class="divider">
+<li><a href="https://yobadia.com/blog/">Blog</a></li>
+<li class="divider">
+</ul></section></nav></div><div class="row t30"><div class="medium-8 columns medium-offset-2 end"><article itemscope itemtype="http://schema.org/Article"><header><figure> <img src="../../images/background_blue.png" width="970" alt="How to create that blog background image" itemprop="image"></figure><div itemprop="name">
+<p class="subheadline">Background image</p>
+<h1>How to create that blog background image</h1>
+</div></header><p class="teaser" itemprop="description"> Use matplotlib for creativity !</p>
+<div itemprop="articleSection">
+<div id="preamble"><div class="sectionbody"><div class="paragraph"><p>This blog post is meant for me to experiment with the Asciidoc syntax to move away from Markdown and integrate it to this jekyll template, as well as to document how I produced my background image.</p></div></div></div>
+<div class="sect1">
+<h2 id="preparing-the-environment">Preparing the environment</h2>
+<div class="sectionbody"><div class="listingblock"><div class="content"><pre class="CodeRay highlight"><code data-lang="python"><span style="color:#777"># Import relevant libraries</span>
+<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">numpy</span> <span style="color:#080;font-weight:bold">as</span> np
+<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">matplotlib.pyplot</span> <span style="color:#080;font-weight:bold">as</span> plt
+
+<span style="color:#777"># Define the figsize for all pyplot plots</span>
+plt.rcParams[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">figure.figsize</span><span style="color:#710">'</span></span>] = <span style="color:#00D">10</span>, <span style="color:#00D">15</span></code></pre></div></div></div>
+</div>
+<div class="sect1">
+<h2 id="define-useful-parameters">Define useful parameters</h2>
+<div class="sectionbody"><div class="listingblock"><div class="content"><pre class="CodeRay highlight"><code data-lang="python">size = <span style="color:#00D">500</span>
+loc = <span style="color:#00D">5</span>
+scale = <span style="color:#60E">1.8</span>
+x_factor = <span style="color:#60E">0.5</span></code></pre></div></div></div>
+</div>
+<div class="sect1">
+<h2 id="generate-the-values-to-be-ploted">Generate the values to be ploted</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Here we use gaussian distributions for generatin the image but you could use any to generate an image that suits you better.</p></div>
+<div class="listingblock"><div class="content"><pre class="CodeRay highlight"><code data-lang="python"><span style="color:#777"># Create 2 gaussian blobs distributed around 0 and concatenate them in a single vector</span>
+x = np.random.normal(size=size, loc=loc, scale=scale)
+x = np.concatenate([x, -x])
+
+<span style="color:#777"># Create another vector as a combination of the previous one and a new gausian blob</span>
+y = (x * x_factor + np.random.normal(size=size*<span style="color:#00D">2</span>))</code></pre></div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-and-save-the-plot">Create and save the plot</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Here the colormap used is 'Reds_r' and for the real background image it was 'Blues_r'. To find a list of all available colors you can follow this <a href="https://matplotlib.org/tutorials/colors/colormaps.html" target="_blank" _blank rel="noopener noreferrer">link</a>.</p></div>
+<div class="listingblock"><div class="content"><pre class="CodeRay highlight"><code data-lang="python">plt.hexbin(x, y, gridsize=(<span style="color:#00D">20</span>,<span style="color:#00D">20</span>), cmap=plt.get_cmap(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Reds_r</span><span style="color:#710">'</span></span>))
+plt.savefig(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">background_red.png</span><span style="color:#710">'</span></span>, dpi=<span style="color:#00D">500</span>)</code></pre></div></div>
+<div class="imageblock"><div class="content"> <img src="../../images/background_red.png" alt="background red">
+</div></div>
+<div class="paragraph"><p>Once this image is generated, you can use your favorite image editor to rotate it, crop it, etc… Be creative :)</p></div>
+</div>
+</div>
+</div>
+<h3 id="comments" class="t60">Dialogue &amp; Discussion</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript"> /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */ var disqus_shortname = 'yobadia'; var disqus_identifier = '/visualization/background_img/'; /* * * DON'T EDIT BELOW THIS LINE * * */ (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by Disqus.</a>
+</noscript></article></div></div><div id="up-to-top" class="row"><div class="small-12 columns" style="text-align: right;"> <a class="iconfont" href="#top-of-page"></a>
+</div></div><div id="subfooter"><nav class="row"><section id="subfooter-left" class="small-12 medium-6 columns credits"><p><a href="http://phlow.github.io/feeling-responsive/" target="_blank" rel="noopener noreferrer">Feeling Responsive</a> by <a href="http://phlow.de/" target="_blank" rel="noopener noreferrer">Phlow</a> with ♥</p></section><section id="subfooter-right" class="small-12 medium-6 columns"><ul class="inline-list social-icons">
+<li><a href="https://github.com/YohanObadia/" target="_blank" class="icon-github" title="Code und mehr..." rel="noopener noreferrer"></a></li>
+<li><a href="https://www.linkedin.com/in/yohan-obadia/" target="_blank" class="icon-linkedin" title="YouTube Google+" rel="noopener noreferrer"></a></li>
+</ul></section></nav></div><script src="https://yobadia.com/assets/js/javascript.min.js"></script>
