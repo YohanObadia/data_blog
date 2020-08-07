@@ -1,0 +1,120 @@
+---
+layout: page
+
+subheadline: ""
+title: "Monty Hall Monte Carlo"
+teaser: "Fun fact if you ever play that game"
+categories:
+  - probabilities
+tags:
+  - probabilities
+
+header: no
+
+comments: true
+show_meta: false
+
+image:
+    title: ../../images/monty_door.svg
+    thumb: ../../images/monty_door.svg
+    homepage: ../../images/monty_door.svg
+author: yo
+
+---
+include::_posts/math.adoc[leveloffset=+1]
+
+This is a hypothetical game popularized by Marilyn vos Savant as follow :
+
+
+__Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?__
+
+The answer to this probabilty puzzle can be disconcerting. One might expect the probability to be stem:[\frac{1}{2}] for both of the remaining doors but in reality the previously selected door carries a probability of hiding a car of stem:[\frac{1}{3}] while the other remaining door has a probability of stem:[\frac{2}{3}]. The conclusion is that you should always switch after the host opens one of the door with a goat !
+
+To get the rigorous demonstration, I refer you to the link:https://en.wikipedia.org/wiki/Monty_Hall_problem[Wikipedia's page]. Here I will take a different approach by simulating the game repeatedly to estimate the true probability. This method is called link:https://en.wikipedia.org/wiki/Monte_Carlo_method[Monte Carlo simulation].
+
+
+We first import *numpy* that will be our only dependency :
+
+[source, python]
+----
+import numpy as np
+----
+
+Let's now present an implementation of the game that is meant for readability and allows to run the game once.
+[source, python]
+----
+def montyhall_sim(change_door=False):
+    """
+    This algorithm could be greatly optimized for performance.
+    Here it has instead been optimized for understandability for an educational purpose :)
+    """
+    # Initialize the doors
+    nb_doors = 3
+    doors = np.zeros(nb_doors)
+    car_door = np.random.randint(nb_doors)
+    doors[car_door] = 1
+    closed_doors = np.arange(nb_doors)
+    
+    # First step : the player select a door randomly
+    selected_door = np.random.randint(nb_doors)
+    
+    # Second step : the host pick randomly among the remaining empty doors and opens it 
+    empty_doors = np.argwhere(doors==0)
+    opened_door = np.random.choice(empty_doors[empty_doors!=selected_door])
+    closed_doors = np.delete(closed_doors, opened_door)
+    
+    # Third step : the player either keep his door or switches
+    if change_door:
+        selected_door = np.delete(closed_doors, selected_door)[0]
+        
+    return doors[selected_door]  
+----
+
+The result bellow confirms with empirical data what the theory says about wining probabilities.
+
+[source, python]
+----
+%%time
+np.mean([montyhall_sim(False) for x in range(nb_exp)])
+
+> Wall time: 28.8 s
+
+> 0.333223
+----
+
+Now lets try to improve the simulation speed by reframing the algorithm to learn a bit more about numpy and vectorization. Below we introduce a new implementation that runs all the simulations at once instead of runing them sequentially : 
+
+[source, python]
+----
+def montyhall_sim_optim(nb_exp, change_door=False):
+    """
+    A vectorized version leveraging numpy features that returns the average wining score.
+    """
+    
+    # Initialize the doors
+    rows = np.arange(nb_exp)
+    exp = np.zeros((nb_exp,3))
+    exp[rows,np.random.randint(3,size=nb_exp)] = 1
+    car_doors = np.argsort(exp, axis=1)[:,-1] # Pick the last columns that corresponds to the wining door
+    
+    # First step : the player select a door randomly
+    choices = np.random.randint(3, size=nb_exp)
+    
+    # Second and third steps are now combined
+    if change_door:
+        # If change_door, means that the wining door is not the one originaly picked
+        return np.mean(car_doors!=choices)
+    return np.mean(car_doors==choices)    
+----
+
+The result is still the same but we just improved our computation speed by a wooping factor of *300+* !
+
+[source, python]
+----
+%%time
+np.mean([montyhall_sim(False) for x in range(nb_exp)])
+
+> Wall time: 90.8 ms
+
+> 0.333379
+----
