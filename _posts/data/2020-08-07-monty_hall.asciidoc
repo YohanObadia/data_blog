@@ -75,7 +75,7 @@ The result bellow confirms with empirical data what the theory says about wining
 [source, python]
 ----
 %%time
-np.mean([montyhall_sim(False) for x in range(nb_exp)])
+np.mean([montyhall_sim(False) for x in range(1000000)])
 
 > Wall time: 28.8 s
 
@@ -112,9 +112,11 @@ The result is still the same but we just improved our computation speed by a woo
 [source, python]
 ----
 %%time
-np.mean([montyhall_sim(False) for x in range(nb_exp)])
+np.mean([montyhall_sim(False) for x in range(1000000)])
 
 > Wall time: 90.8 ms
 
 > 0.333379
 ----
+
+It's a good habit to look for algorithmic optimization when possible and I am sure that someone could still find ways to improve this one ;)
